@@ -1,0 +1,52 @@
+{
+  "name": "applicantboilerplate-v1",
+  "version": "0.0.1",
+  "description": "This Boilerplate is used by Frontmen as a starterkit for applicants to demonstrate their awesome Frontend and JavaScript skills!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"We didn`t specify any tests, that`s up to you!\" && exit 1"
+  },
+  "keywords": [
+    "Frontmen",
+    "Frontmen - Expert Coding",
+    "Eindhoven.js",
+    "Boilerplate",
+    "Applicant",
+    "Frontend",
+    "JavaScript",
+    "TypeScript",
+    "MySQL",
+    "NodeJS",
+    "Sequelize"
+  ],
+  "author": "Niek Heezemans, Tech Lead Frontmen - Expert Coders Eindhoven (NL)",
+  "email": "niek.heezemans@frontmen.nl",
+  "url": "https://www.frontmen.nl",
+  "license": "GNU GPLv3",
+  "private": true,
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cache-manager": "^2.6.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-winston": "^2.4.0",
+    "fs": "0.0.1-security",
+    "helmet": "^3.10.0",
+    "lodash": "^4.17.4",
+    "longjohn": "^0.2.12",
+    "mongoose": "^5.0.2",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.5.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "path": "^0.12.7",
+    "sequelize": "^4.32.2",
+    "sequelize-cli": "^3.2.0",
+    "winston": "^2.4.0",
+    "winston-daily-rotate-file": "^1.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
