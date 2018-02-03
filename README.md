@@ -1,4 +1,4 @@
-#Frontmen Applicant Boilerplate
+# Frontmen Applicant Boilerplate
 This Boilerplate is used as a base for Frontmen Applicants to build awesome Frontend Cases to demonstrate their awesome skills!
 
 The Boilerplate consist of a MySQL Database that is managed via Sequelize and an API-Gateway built with NodeJS and Express. The API-Gateway has some standard functionality like:
@@ -11,16 +11,16 @@ The Boilerplate consist of a MySQL Database that is managed via Sequelize and an
 *Version 0.1.0 - MySQL 
 Released January 31, 2018*
 
-**Table of Contents**
+## Table of Contents**
 
 [TOCM]
 
 [TOC]
 
-##Install Guide
+**Install Guide
 To get this Boilerplate up & running you need to have some components installed first.
 
-###Dependencies
+### Dependencies
 1. NodeJS (preferably the version recommended for most users)
 1. MySQL (e.g. via a package like XAMPP or WAMP or you can use Docker)
 1. NPM packages (also see package.json for versions);
@@ -29,7 +29,7 @@ To get this Boilerplate up & running you need to have some components installed 
 3	. MySQL2 installed globally (https://www.npmjs.com/package/mysql2)
 4	. Optional: Nodemon installed globally (https://www.npmjs.com/package/nodemon)
 
-###Installation
+### Installation
 1. Install the dependencies
 1. Run `$ npm install`
 1. Make sure the MySQL Server is running
@@ -42,10 +42,10 @@ To get this Boilerplate up & running you need to have some components installed 
 
 *Note: A default admin user (as specified in the config) is created if it doesn`t exist in the database table Users.*
 
-##API's
+## API's
 The API-Gateway has a number of default API's that can be used:
 
-####Healtcheck
+#### Healtcheck
 **Description:** An API that can be used to determine if the Gateway is operational.
 **Accessibility:** Public
 **URL: **localhost:3000/healthcheck
@@ -56,11 +56,11 @@ The API-Gateway has a number of default API's that can be used:
     "status": "OK",
     "timestamp": 1517426412808
 }
-####Authentication
+#### Authentication
 For authenticating a user and verifying a JWT-Token there are 2 API's:
 
 ------------
-#####Login
+##### Login
 **Description:** An API that can be used to log a user in.
 **Accessibility:** Public
 **URL: **localhost:3000/login
@@ -117,7 +117,7 @@ Content-Type: application-json
 
 ------------
 
-#####Verify Login
+##### Verify Login
 **Description:** An API that can be used to verify if a JWT-Token is valid.
 **Accessibility:** Public but it would be better if this was private (hint ;))
 **URL: **localhost:3000/login/verify
@@ -130,7 +130,7 @@ Authorization: Bearer* [JWT-Token_From_Login]*
     "msg": "Authorized"
 }
 
-####Clear Cache
+#### Clear Cache
 
 **Description:** An API that can be used to clear the cache of the Gateway.
 **Accessibility:** Private and needs admin-rights
@@ -145,9 +145,9 @@ Authorization: Bearer* [JWT-Token_From_Login]*
     "msg": "Cache cleared"
 }
 
-####User Profiles
+#### User Profiles
 
-#####My Profile
+##### My Profile
 **Description:** Get the Profile of the loggedin User
 **Accessibility:** Private
 **URL: **localhost:3000/api/v1/users/myprofile
