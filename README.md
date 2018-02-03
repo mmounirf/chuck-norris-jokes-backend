@@ -51,7 +51,7 @@ The API-Gateway has a number of default API's that can be used:
 **URL:** localhost:3000/healthcheck<br />
 **Method:** GET<br />
 **Request headers:** none<br />
-**Example result:**<br />
+**Example result success:**<br />
 ```javascript
 {
     "status": "OK",
@@ -70,8 +70,13 @@ For authenticating a user and verifying a JWT-Token there are 2 API's:
 **Request headers:** <br />
 Content-Type: application-json<br />
 **Body:**<br />
-{ "username" : "your_username", "password" : "your_password"  }<br />
-**Example result:** <br />
+```javascript
+{ 
+    "username" : "your_username", 
+    "password" : "your_password"
+}
+```
+**Example result success:** <br />
 ```javascript
 {
     "token": "eyJhbGciOiJIUzI1NiIsInwefwefMSwiZ3VpZCI6IjQ0MDdmOTNjLWRjMDEtNDQ2My1hMzhmwefwefLWUxZmJiMWQzMTRmOCIsImV4cCI6MTUxNzU3ODM2NCwiZW1haWwiOiJuaWVrLmhlZXplbWFuc0Bmcm9udG1lbi5ubCIsImlhdCI6MTUxNzUwefwef3Mjk2NH0.Ykirzr4b7GdsIPGV6PDjCpFHOAqohKazJl5pWJFw",
@@ -118,6 +123,18 @@ Content-Type: application-json<br />
     }
 }
 ```
+**Example result error wrong username:** <br />
+```javascript
+{
+    "error": "User not found!"
+}
+```
+**Example result error wrong password:** <br />
+```javascript
+{
+    "error": "Wrong password"
+}
+```
 ------------
 
 ##### Verify Login
@@ -128,10 +145,16 @@ Content-Type: application-json<br />
 **Request headers:**<br />
 Content-Type: application-json<br />
 Authorization: Bearer *[JWT-Token_From_Login]*<br />
-**Example result:**<br />
+**Example result success:**<br />
 ```javascript
 {
     "msg": "Authorized"
+}
+```
+**Example result error:**<br />
+```javascript
+{
+    "msg": "Unauthorized"
 }
 ```
 #### Clear Cache
@@ -143,12 +166,16 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
 **Request headers:**<br />
 Content-Type: application-json<br />
 Authorization: Bearer *[JWT-Token_From_Login]*<br />
-**Example result:**<br />
+**Example result success:**<br />
 ```javascript
 {
     "status": "OK",
     "msg": "Cache cleared"
 }
+```
+**Example result error:**<br />
+```javascript
+Unauthorized
 ```
 #### User Profiles
 
@@ -160,7 +187,7 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
 **Request headers:**<br />
 Content-Type: application-json<br />
 Authorization: Bearer *[JWT-Token_From_Login]*<br />
-**Example result:**<br />
+**Example result success:**<br />
 ```javascript
 {
     "user": {
@@ -201,4 +228,8 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
         ]
     }
 }
+```
+**Example result error:**<br />
+```javascript
+Unauthorized
 ```
