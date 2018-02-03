@@ -52,24 +52,27 @@ The API-Gateway has a number of default API's that can be used:
 **Method:** GET<br />
 **Request headers:** none<br />
 **Example result:**<br />
+```javascript
 {
     "status": "OK",
     "timestamp": 1517426412808
 }
+```
 #### Authentication
 For authenticating a user and verifying a JWT-Token there are 2 API's:
 
 ------------
 ##### Login
-**Description:** An API that can be used to log a user in.
-**Accessibility:** Public
-**URL: **localhost:3000/login
-**Method: **POST
-**Request headers: **
-Content-Type: application-json
-**Body: **
-{ "username" : "your_username", "password" : "your_password"  }
-**Example result:**
+**Description:** An API that can be used to log a user in.<br />
+**Accessibility:** Public<br />
+**URL:** localhost:3000/login<br />
+**Method:** POST<br />
+**Request headers:** <br />
+Content-Type: application-json<br />
+**Body:**<br />
+{ "username" : "your_username", "password" : "your_password"  }<br />
+**Example result:** <br />
+```javascript
 {
     "token": "eyJhbGciOiJIUzI1NiIsInwefwefMSwiZ3VpZCI6IjQ0MDdmOTNjLWRjMDEtNDQ2My1hMzhmwefwefLWUxZmJiMWQzMTRmOCIsImV4cCI6MTUxNzU3ODM2NCwiZW1haWwiOiJuaWVrLmhlZXplbWFuc0Bmcm9udG1lbi5ubCIsImlhdCI6MTUxNzUwefwef3Mjk2NH0.Ykirzr4b7GdsIPGV6PDjCpFHOAqohKazJl5pWJFw",
     "user": {
@@ -114,48 +117,51 @@ Content-Type: application-json
         ]
     }
 }
-
+```
 ------------
 
 ##### Verify Login
-**Description:** An API that can be used to verify if a JWT-Token is valid.
-**Accessibility:** Public but it would be better if this was private (hint ;))
-**URL: **localhost:3000/login/verify
-**Method: **GET
-**Request headers: **
-Content-Type: application-json
-Authorization: Bearer* [JWT-Token_From_Login]*
-**Example result:**
+**Description:** An API that can be used to verify if a JWT-Token is valid.<br />
+**Accessibility:** Public but it would be better if this was private (hint ;))<br />
+**URL:** localhost:3000/login/verify<br />
+**Method:** GET<br />
+**Request headers:**<br />
+Content-Type: application-json<br />
+Authorization: Bearer *[JWT-Token_From_Login]*<br />
+**Example result:**<br />
+```javascript
 {
     "msg": "Authorized"
 }
-
+```
 #### Clear Cache
 
-**Description:** An API that can be used to clear the cache of the Gateway.
-**Accessibility:** Private and needs admin-rights
-**URL: **localhost:3000/cache/clear
-**Method: **GET
-**Request headers: **
-Content-Type: application-json
-Authorization: Bearer* [JWT-Token_From_Login]*
-**Example result:**
+**Description:** An API that can be used to clear the cache of the Gateway.<br />
+**Accessibility:** Private and needs admin-rights<br />
+**URL:** localhost:3000/cache/clear<br />
+**Method:** GET <br />
+**Request headers:**<br />
+Content-Type: application-json<br />
+Authorization: Bearer *[JWT-Token_From_Login]*<br />
+**Example result:**<br />
+```javascript
 {
     "status": "OK",
     "msg": "Cache cleared"
 }
-
+```
 #### User Profiles
 
 ##### My Profile
-**Description:** Get the Profile of the loggedin User
-**Accessibility:** Private
-**URL: **localhost:3000/api/v1/users/myprofile
-**Method: **GET
-**Request headers: **
-Content-Type: application-json
-Authorization: Bearer* [JWT-Token_From_Login]*
-**Example result:**
+**Description:** Get the Profile of the loggedin User<br />
+**Accessibility:** Private<br />
+**URL:** localhost:3000/api/v1/users/myprofile<br />
+**Method:** GET<br />
+**Request headers:**<br />
+Content-Type: application-json<br />
+Authorization: Bearer *[JWT-Token_From_Login]*<br />
+**Example result:**<br />
+```javascript
 {
     "user": {
         "firstname": "Frontmen",
@@ -195,3 +201,4 @@ Authorization: Bearer* [JWT-Token_From_Login]*
         ]
     }
 }
+```
