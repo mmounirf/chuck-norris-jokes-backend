@@ -17,7 +17,7 @@ Released January 31, 2018*
 
 [TOC]
 
-**Install Guide
+## Install Guide
 To get this Boilerplate up & running you need to have some components installed first.
 
 ### Dependencies
@@ -46,12 +46,12 @@ To get this Boilerplate up & running you need to have some components installed 
 The API-Gateway has a number of default API's that can be used:
 
 #### Healtcheck
-**Description:** An API that can be used to determine if the Gateway is operational.
-**Accessibility:** Public
-**URL: **localhost:3000/healthcheck
-**Method: **GET
-**Request headers: **none;
-**Example result:**
+**Description:** An API that can be used to determine if the Gateway is operational.<br />
+**Accessibility:** Public<br /> 
+**URL:** localhost:3000/healthcheck<br />
+**Method:** GET<br />
+**Request headers:** none<br />
+**Example result:**<br />
 {
     "status": "OK",
     "timestamp": 1517426412808
