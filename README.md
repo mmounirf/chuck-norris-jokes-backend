@@ -11,12 +11,6 @@ The Boilerplate consist of a MySQL Database that is managed via Sequelize and an
 *Version 0.1.0 - MySQL 
 Released January 31, 2018*
 
-## Table of Contents**
-
-[TOCM]
-
-[TOC]
-
 ## Install Guide
 To get this Boilerplate up & running you need to have some components installed first.
 

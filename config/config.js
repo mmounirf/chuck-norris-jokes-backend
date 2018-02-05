@@ -4,18 +4,27 @@
  */
 const _ = require('lodash');
 // Define our variables
+let config = {};
 let envConfig = {};
+let configToExport = {};
 
 /**
  * Define the global config for every environment that will be merged with environment specific config files
  */
-const config = {
+config = {
   dev: 'dev',
   acc: 'acc',
   tst: 'tst',
   prd: 'prd',
   port: process.env.PORT || 3000
 };
+// Define our protected Endpoint
+config.protectedEndpoints = [
+  { uri : '/cache/clear', rights: 'admin' },
+  { uri : '/login/verify', rights: '' },
+  { uri : '/users/myprofile', rights: '' }
+];
+
 
 // Set the proces.env.NODE_ENV, if it does exist use the default (dev)
 process.env.NODE_ENV = process.env.NODE_ENV || config.dev;
@@ -44,7 +53,7 @@ try{
 /**
  * Merge the generic config file & the environment specific config file
  */
-var configToExport = _.merge(config, envConfig);
+configToExport = _.merge(config, envConfig);
 configToExport.autodetect = configToExport.database;
 
 // Export the config

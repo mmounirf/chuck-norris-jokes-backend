@@ -13,8 +13,8 @@ module.exports = {
             Users.findOne({
                 // Include models
                 include: [
-                    { model: models.Roles },
-                    { model: models.Branches }
+                    { model: models.Roles, attributes: ['id', 'name', 'isAdmin'] },
+                    { model: models.Branches, attributes: [ 'id', 'name', 'city'] }
                 ],
                 where: {
                     $or: [{username: user}, {email: user}]

@@ -14,6 +14,9 @@ require( './middleware/middleware' )(app);
  * Generic API's
  */
 
+// Use protected Endpoints
+app.use( '/', require( './authentication/protected-endpoints/protected-enpoints' ) );
+
 // Login
 const login = require('./authentication/login/login');
 app.use('/login', login);

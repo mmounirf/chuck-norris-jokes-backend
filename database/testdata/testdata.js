@@ -46,6 +46,7 @@ Users.find({ where: { username: config.admin.username } }).then( function (user)
             }, 500);
         // Error
         }, err => {
+            // Log the Error
             console.log( err );
             logger.error( 'ERROR Creating Admin User for Email: ' + config.admin.email + ' - Username: ' + config.admin.username );
         });

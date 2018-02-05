@@ -34,8 +34,8 @@ const self = module.exports = {
             Users.findOne({
                 attributes: ['firstname', 'lastname','email', 'username', 'status'],
                 include: [
-                    { model: models.Roles },
-                    { model: models.Branches }
+                    { model: models.Roles, attributes: ['id', 'name', 'isAdmin'] },
+                    { model: models.Branches, attributes: [ 'id', 'name', 'city'] }
                 ],
                 where: {
                     guid: guid
@@ -49,7 +49,6 @@ const self = module.exports = {
                     reject();
                 }
             }, err => {
-                console.log( 'HERE?', err );
                 // Could not Query
                 reject();
             });
@@ -72,21 +71,5 @@ const self = module.exports = {
                 reject();
             }
         });
-    },
-    // Is Admin User
-    isAdminUser: function( token ){
-        return new Promise(function (resolve, reject) {
-            self.getLoggedInUserObject( token ).then( isAdmin => {
-                // Check if the User is an Admin
-                if( _.findIndex(isAdmin.Roles, ['isAdmin', true]) !== -1 ){
-                    resolve( true );
-                } else {
-                    reject( false );
-                }
-            }, err => {
-    
-            });
-        });
-
     }
 }
