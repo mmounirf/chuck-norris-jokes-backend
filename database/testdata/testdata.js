@@ -7,6 +7,7 @@ const models = require('../models');
 const Users = models.Users;
 const UserRoles = models.UserRoles;
 const UserBranches = models.UserBranches;
+
 /**
  * @workaround because Seeders don't allow for Hooks in Sequelize-CLI 3. We need hooks to hash Passwords with BCrypt before inserting it into the DB
  * This will be available in Sequelize-CLI 4.

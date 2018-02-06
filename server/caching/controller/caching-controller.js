@@ -12,11 +12,11 @@ const memoryCache = cacheManager.caching({
 
 module.exports = {
     // Reset the Cache
-	clearCache: function () {
+	clearCache: () => {
 		return memoryCache.reset();
     },
     // Get the Cache
-	getMemoryCache: function () {
+	getMemoryCache: () => {
 		return memoryCache;
 	}
 };

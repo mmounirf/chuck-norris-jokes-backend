@@ -13,7 +13,7 @@ const controller = require('./controller/login-controller');
  * Login
  */
 login.options('/')
-login.post('/', function (req, res, next) {
+login.post('/', (req, res, next) => {
 	// Check to see if the user is known by username or email
 	controller.findUser( req.body.username ).then( userObject => {
 		// Found the user, verify the passwords

@@ -8,13 +8,14 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const logger = require('../../utils/logger');
 const controller = require('./controller/passport-controller');
 
-module.exports = function (passport) {
+module.exports = (passport) => {
     const options = {};
     options.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
     options.secretOrKey = config.jwt.secret;
 
     // Check the JWT-Token on every HTTP Request where Passport Authentication is enabled and return the user object
-    passport.use(new JwtStrategy(options, function (jwt_payload, done) {
+    passport.use(new JwtStrategy(options, (jwt_payload, done) => {
+        
         // Get the User From the Database by GUID
         controller.getUserFromDB(jwt_payload.guid).then(userObject => {
             // Check if we have an userObject
@@ -32,7 +33,7 @@ module.exports = function (passport) {
             done(err, null);
         });
         // An Error occured 
-    }, function (error) {
+    }, (error) => {
         logger.warn('Passport Error: ' + JSON.stringify(error));
     }));
 }

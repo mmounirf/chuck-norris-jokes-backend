@@ -7,8 +7,8 @@ const Users = models.Users;
 
 module.exports = {
     // Verify if a username or email is found in the database
-    findUser: function( user ){
-        return new Promise(function (resolve, reject) {
+    findUser: ( user ) => {
+        return new Promise( (resolve, reject) => {
             // Find a single user by username or email
             Users.findOne({
                 // Include models
@@ -31,10 +31,10 @@ module.exports = {
 
     },
     // Verify if the given password matches the hashed password in the database
-    verifyPassword: function( password, userPassword ){
-        return new Promise(function (resolve, reject) {
+    verifyPassword: ( password, userPassword ) => {
+        return new Promise( (resolve, reject) => {
             // Compare the Password with the DB Password
-            Users.comparePassword(password, userPassword, function (isMatch, error) {
+            Users.comparePassword(password, userPassword, (isMatch, error) => {
                 // Passwords match
                 if( isMatch && !error ){
                     resolve();

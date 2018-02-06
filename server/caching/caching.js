@@ -12,7 +12,7 @@ const cacheController = require('./controller/caching-controller');
  * @method GET
  * @example http://localhost:3000/cache/clear
  */
-caching.get('/clear', function (req, res) {
+caching.get('/clear', (req, res) => {
 
 	// Clear the cache
 	cacheController.clearCache().then(() => {

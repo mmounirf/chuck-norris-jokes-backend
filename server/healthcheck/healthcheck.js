@@ -5,7 +5,7 @@
 const healthcheck = require('express').Router();
 const logger = require('../utils/logger');
 
-healthcheck.get('/', function (req, res) {
+healthcheck.get('/', (req, res) => {
     // Return a status 200 and a Timestamp
 	res.status(200).json({
 		status: 'OK',
@@ -13,7 +13,7 @@ healthcheck.get('/', function (req, res) {
 	});
 });
 
-healthcheck.post('/', function (req, res) {
+healthcheck.post('/', (req, res) => {
     // Return a status 200 and a Timestamp
 	res.status(200).json({
 		status: 'OK',

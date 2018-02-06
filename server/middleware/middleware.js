@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 /**
  * Export our Global Middleware
  */
-module.exports = function (app) {
+module.exports = (app) => {
     app.use(helmet());
     app.use(morgan(config.env));
     app.use(bodyParser.urlencoded({ extended: true }));

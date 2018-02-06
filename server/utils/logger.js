@@ -33,5 +33,5 @@ const logger = new (winston.Logger)({
     })
   ]
 });
-
+// Export the module
 module.exports = logger;

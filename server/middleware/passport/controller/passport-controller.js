@@ -12,9 +12,9 @@ const Users = models.Users;
 const Roles = models.Roles;
 const Branches = models.Branches;
 
-const self = module.exports = {
-    // Get 
-    getDecodedToken: function( token ){
+const _self = module.exports = {
+    // Get the Decoded Token
+    getDecodedToken: ( token ) => {
         // Check if token is given
         if( token ){
             // Try to decode the JWT-Token
@@ -29,8 +29,8 @@ const self = module.exports = {
         }
     },
     // Get a User Object from the Database
-    getUserFromDB: function( guid ){
-        return new Promise(function (resolve, reject) {
+    getUserFromDB: ( guid ) => {
+        return new Promise( (resolve, reject) => {
             Users.findOne({
                 attributes: ['firstname', 'lastname','email', 'username', 'status'],
                 include: [
@@ -55,14 +55,14 @@ const self = module.exports = {
         });
     },
     // Get the loggedin User
-    getLoggedInUserObject: function( token ){    
-        return new Promise(function (resolve, reject) {
+    getLoggedInUserObject: ( token ) => {    
+        return new Promise( (resolve, reject) => {
             // Extract & Validate the Token
-            const jwt_token = self.getDecodedToken( token );
+            const jwt_token = _self.getDecodedToken( token );
             // Check if the Token is valid
             if (jwt_token) {
                 // Get the User Object
-                return self.getUserFromDB( jwt_token.guid ).then( userObject => {
+                return _self.getUserFromDB( jwt_token.guid ).then( userObject => {
                     resolve( userObject )
                 }, err => {
                     reject();

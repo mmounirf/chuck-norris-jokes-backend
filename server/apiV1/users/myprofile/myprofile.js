@@ -8,9 +8,7 @@ const passport = require('passport');
 const passportController = require('../../../middleware/passport/controller/passport-controller');
 const controller = require('./controller/myprofile-controller');
 
-myprofile.get('/', passport.authenticate('jwt', {
-	session: false
-}), function (req, res) {
+myprofile.get('/', (req, res) => {
 	// Get the loggedin User
 	passportController.getLoggedInUserObject( req.headers.authorization ).then( userObject => {
 		// Return the User Object

@@ -12,7 +12,7 @@ const self = module.exports = {
      * @name isEndPointProtected
      * @description Get the Protected Endpoint from the Config
      */
-    isEndPointProtected: function (endpoint) {
+    isEndPointProtected: (endpoint) => {
         // Find the Entry in the config.protectedEndpoints
         return _.find(config.protectedEndpoints, ['uri', endpoint]);
     },
@@ -20,7 +20,7 @@ const self = module.exports = {
      * @name isAdminUser
      * @description Find in the userObject if the User is as admin
      */
-    isAdminUser: function( userObject ){
+    isAdminUser: ( userObject ) => {
         return _.findIndex(userObject.Roles, ['isAdmin', true]) !== -1;
     }
 };

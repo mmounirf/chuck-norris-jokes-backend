@@ -6,7 +6,7 @@ const serverinfo = require('express').Router();
 const logger = require('../utils/logger');
 const controller = require('./controller/serverinfo-controller');
 
-serverinfo.get('/', function (req, res) {
+serverinfo.get('/', (req, res) => {
     // Return a status 200 and a Timestamp
 	res.status(200).json({
 		status: 'OK',

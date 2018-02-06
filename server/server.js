@@ -7,38 +7,42 @@ const express = require('express');
 const app = express();
 // Require our Main API Router
 const apiV1 = require('./apiV1/router');
+
+const healthcheck = require('./healthcheck/healthcheck');
+const login = require('./authentication/login/login');
+const verify = require('./authentication/verify/verify');
+const serverinfo = require('./serverinfo/serverinfo');
+const caching = require('./caching/caching');
 // Require our Global Middleware
-require( './middleware/middleware' )(app);
+require('./middleware/middleware')(app);
 
 /**
  * Generic API's
  */
 
 // Use protected Endpoints
-app.use( '/', require( './authentication/protected-endpoints/protected-enpoints' ) );
+app.use('/*', require( './authentication/protected-endpoints/protected-enpoints' ));
 
 // Login
-const login = require('./authentication/login/login');
 app.use('/login', login);
 
 // Verify Login
-const verify = require('./authentication/verify/verify');
 app.use('/login/verify', verify);
 
 // Healthcheck
-const healthcheck = require('./healthcheck/healthcheck');
 app.use('/healthcheck', healthcheck);
 
 // Caching
-const caching = require('./caching/caching');
 app.use('/cache', caching);
 
 // Server info
-const serverinfo = require('./serverinfo/serverinfo');
 app.use('/serverinfo', serverinfo);
 
 // Add all the API - Version 1
 app.use('/api/v1', apiV1);
+
+// Error Handler
+// require('./errorhandler/errorhandler')(app);
 
 // Export the app
 module.exports = app;
