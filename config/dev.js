@@ -32,7 +32,8 @@ module.exports = {
         host: '127.0.0.1',
         port: '3306',
         dialect: 'mysql',
-        logging: false, // Enable/ Disable console logging
+        logging: false, // Enable/ Disable console logging,
+        operatorsAliases: false, // use Symbol based operators for better security
         pw_salt_factor: 12
     },
     // Admin user - For non-development environments, set this in the Environment Variables

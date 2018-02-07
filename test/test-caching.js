@@ -2,6 +2,7 @@
 /**
  * Require our modules
  */
+const config = require('../config/config');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = chai.should();
@@ -15,7 +16,7 @@ describe('Caching', () => {
     /**
      * Test the /GET cache/clear route with no JWT-Token
      */
-    describe('/GET cache/clear', () => {
+    describe('/GET cache/clear Error 400', () => {
         it('it should give an error because not Authorization Token was given', (done) => {
             chai.request(server)
                 .get('/cache/clear')
@@ -31,12 +32,13 @@ describe('Caching', () => {
     /**
      * Test the /GET cache/clear route with a right JWT-Token
      */
-    describe('/GET cache/clear', () => {
+    describe('/GET cache/clear Success 200', () => {
         it('it should give an a success since the right Bearer Token was given', (done) => {
             // Do a Login
             chai.request(server)
                 .post('/login')
-                .send({ username: 'admin', password: 'admin' })
+                .send({ username: config.admin.username, password: config.admin.password })
+                // .send({ 'username': 'admin', 'password': 'admin' })
                 .then((res) => {
                     // Set the Token
                     jwtToken = 'Bearer ' + res.body.token;

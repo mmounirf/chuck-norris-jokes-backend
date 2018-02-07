@@ -2,6 +2,7 @@
 /**
  * Require our modules
  */
+const config = require('../config/config');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const should = chai.should();
@@ -16,11 +17,12 @@ describe('Login', () => {
      * Test the /POST login with no credentials
      */
     describe('/POST login', () => {
-        it('it should give an error because not Authorization Token was given', (done) => {
+        it('it should give an error because no Authorization Token was given', (done) => {
             chai.request(server)
                 .post('/login')
+                .set('Content-Type', 'application/json')
                 .end((err, res) => {
-                    res.should.have.status(403);
+                    res.should.have.status(400);
                     res.should.be.json;
                     done();
                 });
@@ -28,27 +30,20 @@ describe('Login', () => {
     });
 
     /**
-     * Test the /GET cache/clear route with a right JWT-Token
+     * Test the /POST login with right credentials
      */
-    describe('/GET cache/clear', () => {
-        it('it should give an a success since the right Bearer Token was given', (done) => {
+    describe('/POST login', () => {
+        it('it should give a success since the right credentials were provided given', (done) => {
             // Do a Login
             chai.request(server)
                 .post('/login')
-                .send({ username: 'admin', password: 'admin' })
-                .then((res) => {
-                    // Set the Token
-                    jwtToken = 'Bearer ' + res.body.token;
-                    // Do a request with the token
-                    chai.request(server)
-                        .get('/cache/clear')
-                        .set('Content-Type', 'application/json')
-                        .set('Authorization', jwtToken)
-                        .end((err, res) => {
-                            res.should.have.status(200);
-                            res.should.be.json;
-                            done();
-                        });
+                .set('Content-Type', 'application/json')
+                .send({ username: config.admin.username, password: config.admin.password })
+                // .send({ 'username': 'admin', 'password': 'admin' })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    done();
                 });
         });
     });

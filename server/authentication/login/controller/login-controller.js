@@ -2,6 +2,7 @@
 /**
  * Require our modules
  */
+const Op = require('Sequelize').Op;
 const models = require('../../../../database/models');
 const Users = models.Users;
 
@@ -17,7 +18,7 @@ module.exports = {
                     { model: models.Branches, attributes: [ 'id', 'name', 'city'] }
                 ],
                 where: {
-                    $or: [{username: user}, {email: user}]
+                    [Op.or]: [{username: user}, {email: user}]
                 }
             }).then(userObject => {
                 // Check if we have a User Object
