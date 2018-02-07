@@ -15,13 +15,14 @@ Released January 31, 2018*
 To get this Boilerplate up & running you need to have some components installed first.
 
 ### Dependencies
+1. Xcode Select
 1. NodeJS (preferably the version recommended for most users)
-1. MySQL (e.g. via a package like XAMPP or WAMP or you can use Docker)
+1. MySQL (e.g. via a package like XAMPP or WAMP or you can use Docker - https://dzone.com/articles/docker-for-mac-mysql-setup)
 1. NPM packages (also see package.json for versions);
-1	. Sequelize installed globally (https://www.npmjs.com/package/sequelize)
-2	. Sequelize-cli installed globally (https://www.npmjs.com/package/sequelize-cli)
-3	. MySQL2 installed globally (https://www.npmjs.com/package/mysql2)
-4	. Optional: Nodemon installed globally (https://www.npmjs.com/package/nodemon)
+    1. Sequelize installed globally (https://www.npmjs.com/package/sequelize)
+    2. Sequelize-cli installed globally (https://www.npmjs.com/package/sequelize-cli)
+    3. MySQL2 installed globally (https://www.npmjs.com/package/mysql2)
+    4. Optional: Nodemon installed globally (https://www.npmjs.com/package/nodemon)
 
 ### Installation
 1. Install the dependencies
