@@ -34,3 +34,5 @@ if (config.server.enableHTTPS) {
     };
     https.createServer(sslOptions, app).listen(config.server.https.port);
 }
+
+module.exports = app;

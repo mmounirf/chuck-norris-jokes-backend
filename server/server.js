@@ -11,7 +11,6 @@ const apiV1 = require('./apiV1/router');
 const healthcheck = require('./healthcheck/healthcheck');
 const login = require('./authentication/login/login');
 const verify = require('./authentication/verify/verify');
-const serverinfo = require('./serverinfo/serverinfo');
 const caching = require('./caching/caching');
 // Require our Global Middleware
 require('./middleware/middleware')(app);
@@ -35,14 +34,11 @@ app.use('/healthcheck', healthcheck);
 // Caching
 app.use('/cache', caching);
 
-// Server info
-app.use('/serverinfo', serverinfo);
-
 // Add all the API - Version 1
 app.use('/api/v1', apiV1);
 
 // Error Handler
-// require('./errorhandler/errorhandler')(app);
+require('./errorhandler/errorhandler')(app);
 
 // Export the app
 module.exports = app;

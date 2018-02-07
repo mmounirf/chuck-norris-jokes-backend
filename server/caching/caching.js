@@ -20,7 +20,6 @@ caching.get('/clear', (req, res) => {
 		logger.info('Cache Cleared');
 		// Return the success response
 		res.json({
-			status: 'OK',
 			msg: 'Cache cleared'
 		});
 	}, err => {
@@ -28,8 +27,7 @@ caching.get('/clear', (req, res) => {
 		logger.error('Cache clear failed: ' + JSON.stringify( err) );
 		// Return the error response 
 		res.json({
-			status: 500,
-			msg: 'Cache could not be cleared'
+			err: 'Cache could not be cleared'
 		});
 	});
 });
