@@ -8,14 +8,13 @@ The Boilerplate consist of a MySQL Database that is managed via Sequelize and an
 - Healtcheck
 - Caching
 
-*Version 0.1.0 - MySQL 
-Released January 31, 2018*
+*Version 0.2.0 - MySQL 
+Released Febuary 2nd, 2018*
 
 ## Install Guide
 To get this Boilerplate up & running you need to have some components installed first.
 
 ### Dependencies
-1. Xcode Select??
 1. NodeJS (preferably the version recommended for most users)
 1. MySQL (e.g. via a package like XAMPP or WAMP or you can use Docker - https://dzone.com/articles/docker-for-mac-mysql-setup)
 1. NPM packages (also see package.json for versions);
@@ -36,6 +35,17 @@ To get this Boilerplate up & running you need to have some components installed 
 1. Or run `$ nodemon` from the root of the project to enable this feature.
 
 *Note: A default admin user (as specified in the config) is created if it doesn`t exist in the database table Users.*
+
+## Functionalities
+The API-Gateway offers the following default functionalities & API's
+- Authentication based on JWT (JSON Web Tokens) with PassportJS
+- MySQL Interaction via SequelizeJS
+- Database Schema & Models via code
+- Protected Endpoints & Interceptor managed in config/config.js
+- Healthcheck API
+- Login & Verify Login API
+- Caching Engine & Cache Clear API
+- Myprofile API based on JWT-Token from loggedin User
 
 ## API's
 The API-Gateway has a number of default API's that can be used:
@@ -67,7 +77,7 @@ Content-Type: application-json<br />
 **Body:**<br />
 ```javascript
 { 
-    "username" : "your_username", 
+    "username" : "your_username or your_email", 
     "password" : "your_password"
 }
 ```
@@ -118,16 +128,22 @@ Content-Type: application-json<br />
     }
 }
 ```
+**Example result error wrong no username and/or password:** <br />
+```javascript
+{
+    "err": "Please provide a username and password"
+}
+```
 **Example result error wrong username:** <br />
 ```javascript
 {
-    "error": "User not found!"
+    "err": "User not found"
 }
 ```
 **Example result error wrong password:** <br />
 ```javascript
 {
-    "error": "Wrong password"
+    "err": "Wrong password"
 }
 ```
 ------------
@@ -149,7 +165,7 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
 **Example result error:**<br />
 ```javascript
 {
-    "msg": "Unauthorized"
+    "err": "Unauthorized"
 }
 ```
 #### Clear Cache
@@ -168,9 +184,17 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
     "msg": "Cache cleared"
 }
 ```
-**Example result error:**<br />
+**Example result error unauthorized:**<br />
 ```javascript
-Unauthorized
+{
+    "err": "Unauthorized"
+}
+```
+**Example result error no admin rights:**<br />
+```javascript
+{
+    "err": "Insufficient rights"
+}
 ```
 #### User Profiles
 
@@ -224,7 +248,8 @@ Authorization: Bearer *[JWT-Token_From_Login]*<br />
     }
 }
 ```
-**Example result error:**<br />
+**Example result error unauthorized:**<br />
 ```javascript
-Unauthorized
-```
+{
+    "err": "Unauthorized"
+}

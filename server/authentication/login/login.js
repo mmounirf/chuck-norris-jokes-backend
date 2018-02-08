@@ -47,7 +47,7 @@ login.post('/', (req, res, next) => {
 			logger.warn('Login: Username or Email ' + req.body.username + ' tried to login but does not exist');
 			// Return that the user is not found in the database
 			res.status(403).json({
-				err: 'User not found!'
+				err: 'User not found'
 			});
 		});
 	// Username or PAssword is missing
