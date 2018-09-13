@@ -60,5 +60,5 @@ login.post('/', (req, res, next) => {
 
 });
 
-// Export the Sanitycheck module
+// Export the module
 module.exports = login;

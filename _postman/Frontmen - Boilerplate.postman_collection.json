@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "b25174bb-bf34-28a5-79df-3e0434ef6399",
+		"name": "Frontmen - Boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step 2: Login the user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "475495f4-b8c0-40a6-a66c-8239d8b34dba",
+						"type": "text/javascript",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"TOKEN\", data.token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"admin\",\n\t\"password\" : \"admin\"\n}"
+				},
+				"url": {
+					"raw": "{{HOST}}/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 3: Verify that the login was successful",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{HOST}}/login/verify",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"login",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 1: Verify that the Server is healthy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{HOST}}/healthcheck",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 5: If caching is used, clear the entire cache with this API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{HOST}}/cache/clear",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"cache",
+						"clear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 4: Get the profile of the loggedin user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{HOST}}/api/v1/users/myprofile",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"myprofile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	}
+}

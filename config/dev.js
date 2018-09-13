@@ -26,7 +26,7 @@ module.exports = {
     },
     // Database - For non-development environments, set this in the Environment Variables
     database: {
-        username: 'frontmen',
+        username: 'root',
         password: 'password',
         database: 'frontmen_boilerplate_v1',
         host: '127.0.0.1',

@@ -30,17 +30,19 @@
     "cache-manager": "^2.6.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "express-winston": "^2.4.0",
+    "express-winston": "^3.0.0",
     "fs": "0.0.1-security",
     "helmet": "^3.10.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.11",
     "longjohn": "^0.2.12",
     "mongoose": "^5.0.2",
     "morgan": "^1.9.0",
     "mysql2": "^1.5.1",
     "passport": "^0.4.0",
-    "passport-jwt": "^3.0.1",
+    "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
     "sequelize": "^4.32.2",
     "sequelize-cli": "^3.2.0",
     "to": "^0.2.9",
@@ -50,8 +52,8 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "chai-http": "^3.0.0",
+    "chai-http": "^4.2.0",
     "mocha": "^5.0.0",
-    "nodemon": "^1.14.12"
+    "nodemon": "^1.18.4"
   }
 }

@@ -8,7 +8,7 @@ The Boilerplate consist of a MySQL Database that is managed via Sequelize and an
 - Healtcheck
 - Caching
 
-*Version 0.2.0 - MySQL 
+*Version 0.2.0 - MySQL
 Released Febuary 2nd, 2018*
 
 ## Install Guide
@@ -31,7 +31,7 @@ To get this Boilerplate up & running you need to have some components installed 
 1. Create a Database named: frontmen_boilerplate_v1 or be lazy and let Sequelize-CLI do it for you. Run `$ sequelize db:create frontmen_boilerplate_v1 --env=autodetect` in your terminal. Make sure the database user in the config has sufficient rights for this database.
 1. To create the Database schema, simply run `$ sequelize db:migrate --env=autodetect`.
 1. Let's add some data in the Database by running `$sequelize db:seed:all --env=autodetect`.
-1. Start the server by running `$ node index.js` from the root of the project or use nodemon to use features like livereload. 
+1. Start the server by running `$ node index.js` from the root of the project or use nodemon to use features like livereload.
 1. Or run `$ nodemon` from the root of the project to enable this feature.
 
 *Note: A default admin user (as specified in the config) is created if it doesn`t exist in the database table Users.*
@@ -47,12 +47,17 @@ The API-Gateway offers the following default functionalities & API's
 - Caching Engine & Cache Clear API
 - Myprofile API based on JWT-Token from loggedin User
 
+## Postman
+We have included both an Environment and Collection for you to use in the _postman folder. You need to import both the environment and Collection.
+After a login, the JWT-Token is stored in an environment variable called `TOKEN`. This variable is automatically updated for the API Requests to protected endpoints.
+The `HOST` variable is used to define the URL where your server is running
+
 ## API's
 The API-Gateway has a number of default API's that can be used:
 
 #### Healtcheck
 **Description:** An API that can be used to determine if the Gateway is operational.<br />
-**Accessibility:** Public<br /> 
+**Accessibility:** Public<br />
 **URL:** localhost:3000/healthcheck<br />
 **Method:** GET<br />
 **Request headers:** none<br />
@@ -76,8 +81,8 @@ For authenticating a user and verifying a JWT-Token there are 2 API's:
 Content-Type: application-json<br />
 **Body:**<br />
 ```javascript
-{ 
-    "username" : "your_username or your_email", 
+{
+    "username" : "your_username or your_email",
     "password" : "your_password"
 }
 ```
