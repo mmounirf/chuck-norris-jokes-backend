@@ -12,6 +12,7 @@ const healthcheck = require('./healthcheck/healthcheck');
 const login = require('./authentication/login/login');
 const verify = require('./authentication/verify/verify');
 const caching = require('./caching/caching');
+const jokes = require('./jokes/jokes');
 // Require our Global Middleware
 require('./middleware/middleware')(app);
 
@@ -33,6 +34,9 @@ app.use('/healthcheck', healthcheck);
 
 // Caching
 app.use('/cache', caching);
+
+// Jokes
+app.use('/jokes', jokes);
 
 // Add all the API - Version 1
 app.use('/api/v1', apiV1);

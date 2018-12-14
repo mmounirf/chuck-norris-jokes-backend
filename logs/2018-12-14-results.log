@@ -1,0 +1,35 @@
+{"level":"info","message":"Admin User Created. Email: niek.heezemans@frontmen.nl - Username: admin","timestamp":"4:26:19 PM"}
+{"level":"info","message":"Admin Role ID Created","timestamp":"4:26:20 PM"}
+{"level":"info","message":"Admin Branch ID Created","timestamp":"4:26:20 PM"}
+{"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"4:29:39 PM"}
+{"level":"warn","message":"Login: Username or Email admin2 tried to login but does not exist","timestamp":"4:30:22 PM"}
+{"level":"warn","message":"Login: niek.heezemans@frontmen.nl provided a wrong password","timestamp":"4:30:31 PM"}
+{"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"4:30:42 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"4:38:30 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:38:58 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:39:10 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"4:39:29 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:44:33 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:45:23 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:48:34 PM"}
+{"level":"warn","message":"Invalid Token on request: /users/myprofile","timestamp":"4:48:48 PM"}
+{"level":"warn","message":"Invalid Token on request: /users/myprofile","timestamp":"4:54:49 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"4:55:08 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"4:59:06 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:00:36 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:00:58 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"5:01:11 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:02:21 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:08:12 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:08:23 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:08:32 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:08:48 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:10:06 PM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"5:11:52 PM"}
+{"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"5:17:42 PM"}
+{"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"5:17:52 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"5:18:27 PM"}
+{"level":"warn","message":"niek.heezemans@frontmen.nl requested /api/v1/users/myprofile but doesn`t have admin rights","timestamp":"5:18:27 PM"}
+{"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"5:18:34 PM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"5:19:35 PM"}
+{"level":"warn","message":"niek.heezemans@frontmen.nl requested /login/verify but doesn`t have admin rights","timestamp":"5:19:35 PM"}
