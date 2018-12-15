@@ -5,10 +5,15 @@
 const jokes = require('express').Router();
 const extRequest = require('request-promise-native');
 
+jokes.get('/:number*?', (req, res) => {
+	// Trigger external request based on the provided paramater
+	if(req.params.number) {
+		var request = extRequest({uri: `http://api.icndb.com/jokes/random/${req.params.number}?escape=javascript`, json: true});
+	} else {
+		var request = extRequest({uri: 'http://api.icndb.com/jokes/random/10?escape=javascript', json: true});
+	}
 
-jokes.get('/', (req, res) => {
-	// External request to jokes API
-	extRequest({uri: 'http://api.icndb.com/jokes/random/10?escape=javascript', json: true}).then((extResponse) => {
+	request.then((extResponse) => {
 		// Request fulfilled, set jokes endpoint response
 		res.status(200).json({
 			data: extResponse.value,
