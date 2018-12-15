@@ -8,7 +8,7 @@ const extRequest = require('request-promise-native');
 
 jokes.get('/', (req, res) => {
 	// External request to jokes API
-	extRequest({uri: 'http://api.icndb.com/jokes/random/10', json: true}).then((extResponse) => {
+	extRequest({uri: 'http://api.icndb.com/jokes/random/10?escape=javascript', json: true}).then((extResponse) => {
 		// Request fulfilled, set jokes endpoint response
 		res.status(200).json({
 			data: extResponse.value,

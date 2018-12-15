@@ -3,6 +3,7 @@
  * Require our modules
  */
 const express = require('express');
+const cors = require('cors');
 // Set the App
 const app = express();
 // Require our Main API Router
@@ -19,6 +20,9 @@ require('./middleware/middleware')(app);
 /**
  * Generic API's
  */
+
+// Enable CORS
+app.use(cors())
 
 // Use protected Endpoints
 app.use('/*', require( './authentication/protected-endpoints/protected-enpoints' ));
