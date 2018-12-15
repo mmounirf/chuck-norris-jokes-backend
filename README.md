@@ -155,7 +155,7 @@ Content-Type: application-json<br />
 
 ##### Verify Login
 **Description:** An API that can be used to verify if a JWT-Token is valid.<br />
-**Accessibility:** Public but it would be better if this was private (hint ;))<br />
+**Accessibility:** Private. Uses logged in user JWT-Token<br />
 **URL:** localhost:3000/login/verify<br />
 **Method:** GET<br />
 **Request headers:**<br />
