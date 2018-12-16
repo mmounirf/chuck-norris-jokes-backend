@@ -23,6 +23,7 @@ config.protectedEndpoints = [
   { uri : '/cache/clear', rights: 'admin' },
   { uri : '/login/verify', rights: '' },
   { uri : '/users/myprofile', rights: '' },
+  { uri : '/users/myjokes', rights: '' },
 ];
 
 

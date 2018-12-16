@@ -53,6 +53,7 @@ module.exports = (sequelize, DataTypes) => {
 	Users.associate = function (models) {
 		Users.belongsToMany(models.Roles, { through: 'UserRoles' });
 		Users.belongsToMany(models.Branches, { through: 'UserBranches' });
+		Users.belongsToMany(models.Jokes, { through: 'UserJokes' })
 	}
 	/**
 	 * Compare hashed passwords

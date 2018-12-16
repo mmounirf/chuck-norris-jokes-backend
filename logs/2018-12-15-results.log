@@ -31,3 +31,10 @@
 {"level":"info","message":"Login: niek.heezemans@frontmen.nl logged in","timestamp":"12:56:42 AM"}
 {"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"12:56:56 AM"}
 {"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"12:56:59 AM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"1:40:47 AM"}
+{"level":"warn","message":"Invalid Token on request: /login/verify","timestamp":"1:40:52 AM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"1:43:06 AM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"1:45:19 AM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"1:45:26 AM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"1:48:30 AM"}
+{"level":"info","message":"Passport: niek.heezemans@frontmen.nl requested an API","timestamp":"1:48:50 AM"}
